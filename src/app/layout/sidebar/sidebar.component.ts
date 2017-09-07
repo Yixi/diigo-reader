@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DiigoService} from '../../service/diigo.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private diigoService: DiigoService) { }
 
   ngOnInit() {
+    this.diigoService.getUserInfo().then(info => {
+      console.log(info);
+    });
   }
 
 }

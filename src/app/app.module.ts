@@ -4,19 +4,24 @@ import {AppComponent} from './app.component';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 import {RoutingModule} from './routing.module';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import {SidebarComponent} from './layout/sidebar/sidebar.component';
+import {TopbarComponent} from './layout/topbar/topbar.component';
+import {DiigoService} from './service/diigo.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
+    SidebarComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,
     NgZorroAntdModule.forRoot(),
-    RoutingModule
+    RoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [DiigoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
