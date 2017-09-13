@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
@@ -9,7 +9,7 @@ export class DiigoService {
   constructor(private http: Http) { }
 
   getUserInfo(): Promise<any> {
-    return this.http.get('https://www.diigo.com/interact_api/load_user_info')
+    return this.http.get('http://localhost:6622/diigo/interact_api/load_user_info')
       .toPromise()
       .then(response => response.json().data)
       .catch(this.handleError);

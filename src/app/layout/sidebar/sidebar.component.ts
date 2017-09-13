@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DiigoService} from '../../service/diigo.service';
 
 @Component({
@@ -8,12 +8,16 @@ import {DiigoService} from '../../service/diigo.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private diigoService: DiigoService) { }
+  constructor(private diigoService: DiigoService) {
+  }
 
   ngOnInit() {
-    this.diigoService.getUserInfo().then(info => {
+    // this.diigoService.getUserInfo().then(info => {
+    //   console.log(info);
+    // });
+    this.diigoService.login().then(info => {
       console.log(info);
-    });
+    })
   }
 
 }
